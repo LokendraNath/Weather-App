@@ -15,16 +15,18 @@ interface WeatherStore {
   weather: WeatherData | null;
   error: string;
   saveCites: string[];
+  setCity: (city: string) => void;
   fetchWeather: (city: string) => void;
   addCity: (city: string) => void;
   removeCity: (city: string) => void;
 }
 
-const useStore = create<WeatherStore>((set) => ({
+export const useWeatherStore = create<WeatherStore>((set) => ({
   city: "",
   weather: null,
   error: "",
   saveCites: [],
+  setCity: (city) => set({ city }),
   fetchWeather: async (city) => {
     try {
       const res = fetch(`${apiUrl}${city}&appid=${apiKey}`);
