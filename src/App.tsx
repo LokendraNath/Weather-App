@@ -5,11 +5,12 @@ import Weather from "./components/Weather";
 
 const App = () => {
   return (
-    <Card>
-      <SearchBar />
-      <Error />
-      <Weather />
-    </Card>
+    <SearchBar />
+    // <Card>
+    //   <SearchBar />
+    //   <Error />
+    //   <Weather />
+    // </Card>
   );
 };
 export default App;
